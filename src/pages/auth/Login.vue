@@ -14,34 +14,40 @@
 
             <fg-input
               class="no-border input-lg"
+              :value="signinInfo.email"
+              @change="inputEmailHandle"
               addon-left-icon="now-ui-icons users_circle-08"
-              placeholder="First Name..."
+              placeholder="Email..."
             >
             </fg-input>
 
             <fg-input
+              type="password"
+              :value="signinInfo.password"
+              @change="inputPasswordHandle"
               class="no-border input-lg"
               addon-left-icon="now-ui-icons text_caps-small"
-              placeholder="Last Name..."
+              placeholder="Password..."
             >
             </fg-input>
 
             <template slot="raw-content">
               <div class="card-footer text-center">
-                <a
+                <n-button
                   href="#pablo"
-                  class="btn btn-primary btn-round btn-lg btn-block"
-                  >Get Started</a
-                >
+                  @click="SignInHandle"
+                  class="btn-primary btn-round btn-lg btn-block"
+                  >Sign In
+                </n-button>
               </div>
               <div class="pull-left">
                 <h6>
-                  <a href="#pablo" class="link footer-link">Create Account</a>
+                  <router-link to="/signup" class="link footer-link">Create Account</router-link>
                 </h6>
               </div>
               <div class="pull-right">
                 <h6>
-                  <a href="#pablo" class="link footer-link">Need Help?</a>
+                  <a href="" class="link footer-link">Need Help?</a>
                 </h6>
               </div>
             </template>
@@ -55,6 +61,7 @@
 <script>
 import { Card, Button, FormGroupInput } from '@/components';
 import MainFooter from '@/layout/MainFooter';
+import axios from 'axios';
 export default {
   name: 'login-page',
   bodyClass: 'login-page',
@@ -63,6 +70,36 @@ export default {
     MainFooter,
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput
+  },
+  data () {
+    return {
+      signinInfo: {
+        email: '',
+        password: ''
+      },
+    }
+  },
+  methods: {
+    SignInHandle() {
+      axios.post("/api/signin",
+        this.signinInfo
+      )
+      .then(res => {
+        console.log(res);
+        if(res.data.ok == true) {
+          this.$router.push("/dashboard");
+        }
+      })
+      .catch(error => {  
+        console.error("There was an error during sign-in:", error);  
+      }); 
+    },
+    inputEmailHandle(e) {  
+      this.signinInfo.email = e.target.value;  
+    },
+    inputPasswordHandle(e) {  
+      this.signinInfo.password = e.target.value;  
+    },
   }
 };
 </script>
