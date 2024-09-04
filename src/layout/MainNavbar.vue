@@ -23,6 +23,13 @@
       </el-popover>
     </template>
     <template slot="navbar-menu">
+      <router-link
+        class="nav-link text-white"
+        to="/dashboard"
+      >
+        <i class="now-ui-icons arrows-1_cloud-download-93"></i>
+        <p>Dashboard</p>
+      </router-link>
       <drop-down
         tag="li"
         title=" Login / SignUp"
@@ -104,4 +111,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.1875rem;
+  }
+</style>

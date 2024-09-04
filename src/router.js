@@ -7,6 +7,7 @@ import SignUp from './pages/auth/SignUp.vue';
 import Profile from './pages/Profile.vue';
 import MainNavbar from './layout/MainNavbar.vue';
 import MainFooter from './layout/MainFooter.vue';
+import Dashboard from './pages/Dashboard.vue';
 
 Vue.use(Router);
 
@@ -27,6 +28,15 @@ export default new Router({
       path: '/landing',
       name: 'landing',
       components: { default: Landing, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      components: { default: Dashboard, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: 'black' }

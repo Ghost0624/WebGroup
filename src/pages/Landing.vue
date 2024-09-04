@@ -42,7 +42,7 @@
             <div class="col-md-6">
               <div
                 class="image-container image-left"
-                style="background-image: url('img/login.jpg')"
+                style="background-image: url('img/bg.jpg')"
               >
                 <!-- First image on the left side -->
                 <p class="blockquote blockquote-primary">
@@ -101,6 +101,7 @@
         </div>
       </div>
     </div>
+    
     <div class="section section-team text-center">
       <div class="container">
         <h2 class="title">Here is our team</h2>
