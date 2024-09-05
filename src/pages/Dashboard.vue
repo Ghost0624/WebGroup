@@ -74,7 +74,48 @@
         </div>
       </div>
     </div>
-    
+    <div class="section section-tabs px-4">
+      <div class="row">
+        <div class="col-md-6 ml-auto col-xl-3 mr-auto">
+          <card class="tab-content-padding text-center">
+            <h4>Web App Development</h4>
+            <p>
+              I think that’s a responsibility that I have, to push
+              possibilities, to show people, this is the level that things
+              could be at. So when you get something that has the name Kanye
+              West on it, it’s supposed to be pushing the furthest
+              possibilities. I will be the leader of a company that ends up
+              being worth billions of dollars, because I got the answers. I
+              understand culture. I am the nucleus.
+            </p>
+          </card>
+        </div>
+        <div class="col-md-6 ml-auto col-xl-3 mr-auto">
+          <card class="tab-content-padding text-center">
+            <h4>Java Software Development</h4>
+            <p>
+              WebGroup provides best-in-class Java development services using advanced Java frameworks and the latest innovations in Java technology. We provide reusable code and we specialize in robust and agile server-side and client-side custom application development with a flexible tech stack.
+            </p>
+          </card>
+        </div>
+        <div class="col-md-6 ml-auto col-xl-3 mr-auto">
+          <card class="tab-content-padding text-center">
+            <h4>Web Development</h4>
+            <p>
+              We engineer fast, secure, and reliable websites for a multitude of industries, including education, healthcare, finance, and so much more. Our developers specialize in e-Commerce store management systems, engaging mobile apps, intranet portals, cloud-based currency processing solutions, BI solutions, and more.
+            </p>
+          </card>
+        </div>
+        <div class="col-md-6 ml-auto col-xl-3 mr-auto">
+          <card class="tab-content-padding text-center">
+            <h4>Application Support and Modernization</h4>
+            <p>
+              We support and maintain your applications, several frameworks and extensions, libraries, data-processing platforms, IDEs, and databases. We provide application support and modernization services to ensure that your application is working at optimal conditions. We curb operational costs, minimize redundancy and complexity, and boost quality through seamless external integrations.
+            </p>
+          </card>
+        </div>
+      </div>
+    </div>
     <div class="section section-team text-center">
       <div class="container">
         <h2 class="title">Team Members</h2>
@@ -203,12 +244,14 @@
 <script>
 
 import { Button, FormGroupInput } from '@/components';
+import { Card } from '@/components';
 export default {
   name: 'landing',
   bodyClass: 'landing-page',
   components: {
     [Button.name]: Button,
-    [FormGroupInput.name]: FormGroupInput
+    [FormGroupInput.name]: FormGroupInput,
+    Card,
   },
   data() {
     return {

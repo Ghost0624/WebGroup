@@ -62,6 +62,8 @@
 import { Card, Button, FormGroupInput } from '@/components';
 import MainFooter from '@/layout/MainFooter';
 import axios from 'axios';
+import { mapGetters, mapActions } from 'vuex'; 
+
 export default {
   name: 'login-page',
   bodyClass: 'login-page',
@@ -71,6 +73,9 @@ export default {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput
   },
+  computed: {  
+    ...mapGetters(['getUserInfo']), // Map getters to component  
+  },
   data () {
     return {
       signinInfo: {
@@ -79,14 +84,28 @@ export default {
       },
     }
   },
+  setup () {
+
+  },
   methods: {
+    ...mapActions(['signIn']),
     SignInHandle() {
-      axios.post("/api/signin",
+      axios.post(  
+        "/api/signin",  
         this.signinInfo
-      )
+      )  
       .then(res => {
         console.log(res);
         if(res.data.ok == true) {
+          this.$store.dispatch('signIn', { // Dispatch the signIn action  
+            token: res.data.token,  
+            // id: res.data.user.id, // Assuming user ID is returned  
+            // name: res.data.user.name, // Assuming user name is returned  
+            // email: res.data.user.email, // Assuming user email is returned  
+            // photo: res.data.user.photo // Assuming user photo is returned  
+          });  
+          axios.defaults.headers.common['Authorization'] = res.data.token          
+          localStorage.setItem('token', res.data.token)
           this.$router.push("/dashboard");
         }
       })

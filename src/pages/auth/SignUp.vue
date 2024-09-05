@@ -96,7 +96,12 @@
       createAccount() {
         axios.post("/api/signup",
           this.signupInfo
-        ).then(res => console.log(res))
+        ).then(res => {
+          this.$router.push("/login");
+        })
+        .catch(error => {  
+          console.error("There was an error during sign-in:", error);  
+        }); 
       },
       inputEmailHandle(e) {  
         this.signupInfo.email = e.target.value;  
