@@ -97,7 +97,7 @@
 </template>
 
 <script>
-import { DropDown, Navbar, NavLink } from '@/components';
+import { DropDown, Navbar, NavLink, Button } from '@/components';
 import axios from 'axios';
 import { Popover } from 'element-ui';
 import { mapGetters, mapActions } from 'vuex'; 
@@ -115,7 +115,8 @@ export default {
     DropDown,
     Navbar,
     NavLink,
-    [Popover.name]: Popover
+    [Popover.name]: Popover,
+    [Button.name]: Button,
   },
   data() {
     return {
@@ -130,16 +131,13 @@ export default {
         this.$router.push('/login');
       })
       .catch (err => {
-        console.log("error", err);
+
       })
     }
   },
   created() {
-    console.log();
-    
     axios.post("/api/refresh")
     .then(res => {
-      console.log('Response:', res.data,);
       if(res.data.ok == false) {
         if (this.$route.path !== '/login') {  
           this.$router.push('/login');

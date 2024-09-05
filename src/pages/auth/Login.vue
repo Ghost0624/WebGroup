@@ -95,7 +95,6 @@ export default {
         this.signinInfo
       )  
       .then(res => {
-        console.log(res);
         if(res.data.ok == true) {
           this.$store.dispatch('signIn', { // Dispatch the signIn action  
             token: res.data.token,  

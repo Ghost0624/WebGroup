@@ -75,44 +75,47 @@
       </div>
     </div>
     <div class="section section-tabs px-4">
-      <div class="row">
-        <div class="col-md-6 ml-auto col-xl-3 mr-auto">
-          <card class="tab-content-padding text-center">
-            <h4>Web App Development</h4>
-            <p>
-              I think that’s a responsibility that I have, to push
-              possibilities, to show people, this is the level that things
-              could be at. So when you get something that has the name Kanye
-              West on it, it’s supposed to be pushing the furthest
-              possibilities. I will be the leader of a company that ends up
-              being worth billions of dollars, because I got the answers. I
-              understand culture. I am the nucleus.
-            </p>
-          </card>
-        </div>
-        <div class="col-md-6 ml-auto col-xl-3 mr-auto">
-          <card class="tab-content-padding text-center">
-            <h4>Java Software Development</h4>
-            <p>
-              WebGroup provides best-in-class Java development services using advanced Java frameworks and the latest innovations in Java technology. We provide reusable code and we specialize in robust and agile server-side and client-side custom application development with a flexible tech stack.
-            </p>
-          </card>
-        </div>
-        <div class="col-md-6 ml-auto col-xl-3 mr-auto">
-          <card class="tab-content-padding text-center">
-            <h4>Web Development</h4>
-            <p>
-              We engineer fast, secure, and reliable websites for a multitude of industries, including education, healthcare, finance, and so much more. Our developers specialize in e-Commerce store management systems, engaging mobile apps, intranet portals, cloud-based currency processing solutions, BI solutions, and more.
-            </p>
-          </card>
-        </div>
-        <div class="col-md-6 ml-auto col-xl-3 mr-auto">
-          <card class="tab-content-padding text-center">
-            <h4>Application Support and Modernization</h4>
-            <p>
-              We support and maintain your applications, several frameworks and extensions, libraries, data-processing platforms, IDEs, and databases. We provide application support and modernization services to ensure that your application is working at optimal conditions. We curb operational costs, minimize redundancy and complexity, and boost quality through seamless external integrations.
-            </p>
-          </card>
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-12 ml-auto col-xl-6 mr-auto">
+            <card class="tab-content-padding text-center">
+              <h4>Web App Development</h4>
+              <p>
+                I think that’s a responsibility that I have, to push
+                possibilities, to show people, this is the level that things
+                could be at. So when you get something that has the name Kanye
+                West on it, it’s supposed to be pushing the furthest
+                possibilities. I will be the leader of a company that ends up
+                being worth billions of dollars, because I got the answers. I
+                understand culture. I am the nucleus.
+              </p>
+            </card>
+          </div>
+          <div class="col-md-12 ml-auto col-xl-6 mr-auto">
+            <card class="tab-content-padding text-center">
+              <h4>Java Software Development</h4>
+              <p>
+                WebGroup provides best-in-class Java development services using advanced Java frameworks and the latest innovations in Java technology. We provide reusable code and we specialize in robust and agile server-side and client-side custom application development with a flexible tech stack.
+              </p>
+            </card>
+          </div>
+          <div class="col-md-12 ml-auto col-xl-6 mr-auto">
+            <card class="tab-content-padding text-center">
+              <h4>Web Development</h4>
+              <p>
+                We engineer fast, secure, and reliable websites for a multitude of industries, including education, healthcare, finance, and so much more. Our developers specialize in e-Commerce store management systems, engaging mobile apps, intranet portals, cloud-based currency processing solutions, BI solutions, and more.
+              </p>
+            </card>
+          </div>
+          <div class="col-md-12 ml-auto col-xl-6 mr-auto">
+            <card class="tab-content-padding text-center">
+              <h4>Application Support and Modernization</h4>
+              <p>
+                We support and maintain your applications, several frameworks and extensions, libraries, data-processing platforms, IDEs, and databases. We provide application support and modernization services to ensure that your application is working at optimal conditions. We curb operational costs, minimize redundancy and complexity, and boost quality through seamless external integrations.
+              </p>
+            </card>
+          </div>
         </div>
       </div>
     </div>
@@ -121,81 +124,12 @@
         <h2 class="title">Team Members</h2>
         <div class="team">
           <div class="row">
-            <div class="col-md-4">
-              <div class="team-player">
-                <img
-                  src="img/avatar.jpg"
-                  alt="Thumbnail Image"
-                  class="rounded-circle img-fluid img-raised"
-                />
-                <h4 class="title">Romina Hadid</h4>
-                <p class="category text-primary">Model</p>
-                <p class="description">
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#">links</a> for people to be able to follow
-                  them outside the site.
-                </p>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
-                  ><i class="fab fa-twitter"></i
-                ></a>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
-                  ><i class="fab fa-facebook-square"></i
-                ></a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="team-player">
-                <img
-                  src="img/ryan.jpg"
-                  alt="Thumbnail Image"
-                  class="rounded-circle img-fluid img-raised"
-                />
-                <h4 class="title">Ryan Tompson</h4>
-                <p class="category text-primary">Designer</p>
-                <p class="description">
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#">links</a> for people to be able to follow
-                  them outside the site.
-                </p>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
-                  ><i class="fab fa-twitter"></i
-                ></a>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
-                  ><i class="fab fa-linkedin"></i
-                ></a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="team-player">
-                <img
-                  src="img/eva.jpg"
-                  alt="Thumbnail Image"
-                  class="rounded-circle img-fluid img-raised"
-                />
-                <h4 class="title">Eva Jenner</h4>
-                <p class="category text-primary">Fashion</p>
-                <p class="description">
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#">links</a> for people to be able to follow
-                  them outside the site.
-                </p>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
-                  ><i class="fab fa-google-plus"></i
-                ></a>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
-                  ><i class="fab fa-youtube"></i
-                ></a>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
-                  ><i class="fab fa-twitter"></i
-                ></a>
-              </div>
-            </div>
+            <MemberCardComponents   
+              v-for="developer in developers"   
+              :key="developer.id"
+              :name="developer.name"
+              :role="developer.role_name"
+            />
           </div>
         </div>
       </div>
@@ -242,9 +176,9 @@
   </div>
 </template>
 <script>
-
-import { Button, FormGroupInput } from '@/components';
-import { Card } from '@/components';
+import axios from 'axios';
+import { Button, FormGroupInput, Card } from '@/components';
+import MemberCardComponents from './components/MemberCardComponents.vue';
 export default {
   name: 'landing',
   bodyClass: 'landing-page',
@@ -252,17 +186,29 @@ export default {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
     Card,
+    MemberCardComponents
   },
   data() {
     return {
+      developers: "",
       form: {
         firstName: '',
         email: '',
         message: ''
       }
     };
+  },
+  created() {
+    axios.post('/api/developers')
+    .then(res => {
+      this.developers = res.data.developers
+    })
   }
 };
 </script>
 
-<style></style>
+<style>
+  .services {
+    height: 50px;
+  }
+</style>
