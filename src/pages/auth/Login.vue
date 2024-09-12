@@ -47,7 +47,7 @@
               </div>
               <div class="pull-right">
                 <h6>
-                  <a href="" class="link footer-link">Need Help?</a>
+                  <a href="" class="link footer-link">Need Helper?</a>
                 </h6>
               </div>
             </template>
