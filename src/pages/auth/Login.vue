@@ -106,7 +106,7 @@ export default {
         }
       })
       .catch(error => {  
-        console.error("There was an error during sign-in:", error);  
+        // console.error("There was an error during sign-in:", error);  
       }); 
     },
     inputEmailHandle(e) {  
