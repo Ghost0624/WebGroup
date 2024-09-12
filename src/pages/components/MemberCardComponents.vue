@@ -2,7 +2,7 @@
   <div class="col-md-4">
     <div class="team-player">
       <img
-        src="img/avatar.jpg"
+        :src="photo"
         alt="Thumbnail Image"
         class="rounded-circle img-fluid img-raised"
       />
@@ -34,11 +34,15 @@ export default {
     name: {  
       type: String,  
       required: true // This prop is required  
-    },  
+    },
     role: {  
       type: String,  
       required: true // Default value if not provided  
-    }  
+    },
+    photo: {  
+      type: String,  
+      required: true // Default value if not provided  
+    }
   },
   created() {
 

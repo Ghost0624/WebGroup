@@ -129,6 +129,7 @@
               :key="developer.id"
               :name="developer.name"
               :role="developer.role_name"
+              :photo="developer.photo"
             />
           </div>
         </div>
@@ -190,7 +191,7 @@ export default {
   },
   data() {
     return {
-      developers: "",
+      developers: '',
       form: {
         firstName: '',
         email: '',
