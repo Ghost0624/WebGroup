@@ -39,16 +39,16 @@
         <nav-link to="/landing">
           <i class="now-ui-icons education_paper"></i> Landing
         </nav-link>
-        <nav-link to="/login" v-if="getUserInfo.token == ''">
+        <nav-link to="/login" v-if="token == ''">
           <i class="now-ui-icons users_circle-08"></i> Login
         </nav-link>
-        <nav-link to="/signup" v-if="getUserInfo.token == ''">
+        <nav-link to="/signup" v-if="token == ''">
           <i class="now-ui-icons users_circle-08"></i> SignUp
         </nav-link>
         <nav-link to="/profile">
           <i class="now-ui-icons users_single-02"></i> Profile
         </nav-link>
-        <n-button type="neutral" class="nav-link" @click="logout" v-if="getUserInfo.token !== ''">
+        <n-button type="neutral" class="nav-link" @click="logout" v-if="token !== ''">
           <i class="now-ui-icons users_single-02"></i> LogOut
         </n-button>
       </drop-down>
@@ -97,7 +97,7 @@
 </template>
 
 <script>
-import { DropDown, Navbar, NavLink } from '@/components';
+import { DropDown, Navbar, NavLink, Button } from '@/components';
 import axios from 'axios';
 import { Popover } from 'element-ui';
 import { mapGetters, mapActions } from 'vuex'; 
@@ -108,58 +108,55 @@ export default {
     transparent: Boolean,
     colorOnScroll: Number
   },
-  computed: {  
-    ...mapGetters(['getUserInfo']), // Map getters to component  
+  watch: {
+    "$store.state.token": function (newVal) {
+      this.token = newVal;
+    },
   },
   components: {
     DropDown,
     Navbar,
     NavLink,
-    [Popover.name]: Popover
+    [Popover.name]: Popover,
+    [Button.name]: Button,
   },
   data() {
     return {
-      isSignIn: localStorage.getItem('token'),
+      token: this.$store.state.token
     }
   },
   methods: {
     logout() {
       axios.post("/api/logout")
       .then(res => {
+        localStorage.removeItem('token')
         this.$store.dispatch('logout');  
         this.$router.push('/login');
       })
       .catch (err => {
-        console.log("error", err);
       })
     }
   },
   created() {
-    console.log();
-    
     axios.post("/api/refresh")
     .then(res => {
-      console.log('Response:', res.data,);
       if(res.data.ok == false) {
-        if (this.$route.path !== '/login') {  
+        if (this.$route.path !== '/login') {
           this.$router.push('/login');
           localStorage.removeItem('token')
-          isSignIn = false
         }  
+      } else {
+        localStorage.setItem('token', res.data.token)
+        this.$store.dispatch('signIn', { // Dispatch the signIn action  
+          user: res.data.user,
+          token: res.data.token
+        });
       }
-      this.$store.dispatch('signIn', { // Dispatch the signIn action  
-        token: res.data.token,  
-        // id: res.data.user.id, // Assuming user ID is returned  
-        // name: res.data.user.name, // Assuming user name is returned  
-        // email: res.data.user.email, // Assuming user email is returned  
-        // photo: res.data.user.photo // Assuming user photo is returned  
-      });  
     })
     .catch(error => {  
       if (this.$route.path !== '/login') {  
         this.$router.push('/login');
         localStorage.removeItem('token')
-        isSignIn = false
       }  
     });  
   }  

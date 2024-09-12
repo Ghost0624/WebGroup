@@ -8,10 +8,11 @@ import Profile from './pages/Profile.vue';
 import MainNavbar from './layout/MainNavbar.vue';
 import MainFooter from './layout/MainFooter.vue';
 import Dashboard from './pages/Dashboard.vue';
+import store from './vuex/store';
 
 Vue.use(Router);
 
-export default new Router({
+const router =  new Router({
   mode: "history",
   linkExactActiveClass: 'active',
   routes: [
@@ -40,7 +41,8 @@ export default new Router({
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: 'black' }
-      }
+      },
+      meta: { requiresAuth: true } 
     },
     {
       path: '/login',
@@ -65,7 +67,8 @@ export default new Router({
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: 'black' }
-      }
+      },
+      meta: { requiresAuth: true }
     }
   ],
   scrollBehavior: to => {
@@ -74,5 +77,26 @@ export default new Router({
     } else {
       return { x: 0, y: 0 };
     }
-  }
+  },
+  
 });
+
+router.beforeEach((to, from, next) => {  
+  const isAuthenticated = localStorage.getItem('token'); // Adjust according to your state management  
+
+  if (to.matched.some(record => record.meta.requiresAuth)) {  
+    // The route requires authentication  
+    if (isAuthenticated != null) {  
+      next(); // Proceed to the route  
+    } else {  
+      next({  
+        path: '/login', // Redirect to login if not authenticated  
+        // query: { redirect: to.fullPath }, // Save the route user tried to access  
+      });  
+    }
+  } else {  
+    next(); // Proceed to the route  
+  }  
+});
+
+export default router; 

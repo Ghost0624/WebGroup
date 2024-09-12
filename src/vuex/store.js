@@ -5,40 +5,43 @@ import Vuex from 'vuex';
 Vue.use(Vuex);  
 
 const store = new Vuex.Store({  
-  state: { // State should be defined here  
-    auth: {  
-      token: '',  
+  state: {  
+    token: '',  
+    user: {  
       id: '',  
       name: '',  
       email: '',  
-      photo: ''   
+      photo: ''  
     },  
   },  
   mutations: {  
-    setUserInfo(state, userInfo) { // Corrected to accept state and userInfo  
-      state.auth = { ...state.auth, ...userInfo }; // Update auth state with userInfo  
+    setUserInfo(state, userInfo) {  
+      // Update state properties directly  
+      state.token = userInfo.token; // Directly assign the token  
+      state.user = userInfo.user;   // Directly assign the user object  
     },  
-    logout(state) { // Corrected to accept state and userInfo  
-      state.auth = { 
-        token: '',  
+    logout(state) {  
+      // Reset user properties and token  
+      state.user = {  
         id: '',  
         name: '',  
         email: '',  
         photo: ''  
-      }; // Update auth state with userInfo  
+      };  
+      state.token = '';  
     },  
-  },
+  },  
   actions: {  
-    signIn({ commit }, userInfo) { // Accept userInfo as a parameter  
-      commit('setUserInfo', userInfo); // Pass userInfo to the mutation  
-    },
-    logout({ commit }) { // Accept userInfo as a parameter  
-      commit('logout'); // Pass userInfo to the mutation  
-    },
+    signIn({ commit }, userInfo) {  
+      commit('setUserInfo', userInfo); // Commit the userInfo to the mutation  
+    },  
+    logout({ commit }) {  
+      commit('logout'); // Commit logout mutation  
+    },  
   },  
   getters: {  
-    getUserInfo(state) { // Corrected to accept state  
-      return state.auth; // Return the auth state  
+    getUserInfo(state) {  
+      return state; // Return entire state object  
     },  
   },  
 });  
