@@ -20,9 +20,10 @@ import App from './App.vue';
 import router from './router';
 import NowUiKit from './plugins/now-ui-kit';
 import store from './vuex/store';
+import axios from "axios";  
 
 Vue.config.productionTip = false;
-
+axios.defaults.baseURL = "http://3.27.184.95:8000";
 Vue.use(NowUiKit);
 new Vue({
   router,
